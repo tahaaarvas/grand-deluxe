@@ -26,24 +26,47 @@ document.addEventListener('DOMContentLoaded', () => {
   const phoneDisplayEl = document.querySelector('[data-whatsapp-display]');
   const waTextEl = document.querySelector('[data-whatsapp-cta]');
   const waAnchor = document.querySelector('[data-whatsapp-link]');
-  const placeholderNumber = '905336617010'; // TODO: Telefon numaranı buraya yaz (sadece rakam)
+  const phones = ['905336617010', '905052245390'];
+  const placeholderPrimaryNumber = phones[0];
+  const placeholderSecondaryNumber = phones[1];
+
+  // WhatsApp CTA'lar: data-whatsapp-cta (primary) / data-whatsapp-cta-2 (secondary)
+  const waCtaPrimary = document.querySelector('[data-whatsapp-cta]');
+  const waCtaSecondary = document.querySelector('[data-whatsapp-cta-2]');
+
   const waDefaultMessage = encodeURIComponent('Merhaba Grand Deluxe! Tarih ve paket bilgisi almak istiyorum.');
 
 
-  const buildWhatsappUrl = (message) => {
-    return `https://wa.me/${placeholderNumber}?text=${message}`;
+
+  const buildWhatsappUrl = (phoneNumber, message) => {
+    return `https://wa.me/${phoneNumber}?text=${message}`;
   };
 
   if (waAnchor) {
-    waAnchor.href = buildWhatsappUrl(waDefaultMessage);
+    waAnchor.href = buildWhatsappUrl(placeholderPrimaryNumber, waDefaultMessage);
+
     waAnchor.target = '_blank';
     waAnchor.rel = 'noopener noreferrer';
   }
   if (waTextEl) {
-    waTextEl.href = buildWhatsappUrl(waDefaultMessage);
+    waTextEl.href = buildWhatsappUrl(placeholderPrimaryNumber, waDefaultMessage);
+
     waTextEl.target = '_blank';
     waTextEl.rel = 'noopener noreferrer';
   }
+
+  // CTA'ları tek mesajla güncelle (primary + secondary)
+  if (waCtaPrimary) {
+    waCtaPrimary.href = buildWhatsappUrl(placeholderPrimaryNumber, waDefaultMessage);
+    waCtaPrimary.target = '_blank';
+    waCtaPrimary.rel = 'noopener noreferrer';
+  }
+  if (waCtaSecondary) {
+    waCtaSecondary.href = buildWhatsappUrl(placeholderSecondaryNumber, waDefaultMessage);
+    waCtaSecondary.target = '_blank';
+    waCtaSecondary.rel = 'noopener noreferrer';
+  }
+
 
   // Make contact chips focusable even if href was '#'
   if (phoneDisplayEl) {
@@ -282,7 +305,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = encodeURIComponent(
         `Merhaba Grand Deluxe!\n\nİsim: ${isim}\nEmail: ${email}\nTelefon: ${telefon}\nTarih: ${tarih}\n\nMesaj: ${mesaj}`
       );
-      const url = `https://wa.me/${placeholderNumber}?text=${message}`;
+      const url = `https://wa.me/${placeholderPrimaryNumber}?text=${message}`;
+
 
       alert('Demo: Form alındı. WhatsApp’tan mesaj taslağı açılacak.');
       window.open(url, '_blank', 'noopener,noreferrer');
