@@ -26,8 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const phoneDisplayEl = document.querySelector('[data-whatsapp-display]');
   const waTextEl = document.querySelector('[data-whatsapp-cta]');
   const waAnchor = document.querySelector('[data-whatsapp-link]');
-  const placeholderNumber = '905550000000'; // TODO: Telefon numaranı buraya yaz (sadece rakam)
+  const placeholderNumber = '905336617010'; // TODO: Telefon numaranı buraya yaz (sadece rakam)
   const waDefaultMessage = encodeURIComponent('Merhaba Grand Deluxe! Tarih ve paket bilgisi almak istiyorum.');
+
 
   const buildWhatsappUrl = (message) => {
     return `https://wa.me/${placeholderNumber}?text=${message}`;
