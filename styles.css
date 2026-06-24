@@ -76,7 +76,7 @@ body{
 /* Mobile nav */
 @media (max-width:860px){
   .nav ul{display:none}
-  .nav-toggle{display:block}
+  .nav-toggle{margin-left: auto}
   .nav ul.open{
     display:flex;flex-direction:column;position:absolute;right:20px;top:64px;
     background:rgba(255,255,255,.96);
