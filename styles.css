@@ -82,10 +82,10 @@ body{
     align-items: center !important;
   }
 
-  /* Nav'ı sağa yanaştırıyoruz ama ekran dışına taşırmıyoruz */
-  .nav {
-    display: block !important;
-  }
+  /* Mobilde menüyü sol tarafa sabitle (telefon/pc) */
+  .nav { display: block !important; }
+  .nav--left { position: absolute !important; left: 20px !important; right: auto !important; }
+  .nav--left ul.open{ left: 20px; right: auto; }
 
   .nav ul{display:none}
 
