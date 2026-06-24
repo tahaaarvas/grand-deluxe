@@ -84,8 +84,9 @@ body{
 
   /* Mobilde menüyü sol tarafa sabitle (telefon/pc) */
   .nav { display: block !important; }
-  .nav--left { position: absolute !important; left: 20px !important; right: auto !important; }
-  .nav--left ul.open{ left: 20px; right: auto; }
+  .nav--left { position: absolute !important; left: auto !important; right: 20px !important; }
+  .nav--left ul.open{ left: auto !important; right: 20px !important; }
+
 
   .nav ul{display:none}
 
