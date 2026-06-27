@@ -311,10 +311,12 @@ section{scroll-margin-top:92px}
 .social-box-link{display:inline-flex;align-items:center;gap:10px;padding:10px 12px;border-radius:999px;text-decoration:none;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:var(--muted);font-weight:800;transition:transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease}
 .social-box-link:hover{transform:translateY(-1px);background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);color:var(--text)}
 .social-box-icon{
-  width:28px;
-  height:28px;
-  object-fit:contain;
-  flex-shrink:0;
+   width:24px !important;
+    height:24px !important;
+    max-width:24px;
+    max-height:24px;
+    object-fit:contain;
+    display:block;
 }
 .social-box-text{font-size:.92rem}
 
