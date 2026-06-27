@@ -303,6 +303,37 @@ section{scroll-margin-top:92px}
 .map-frame iframe{width:100%;height:280px;border:0;display:block}
 .map-cta{color:var(--muted-2);font-size:.9rem}
 
+/* Social inline (contact üstü) */
+/* Social box (iletisim & rezervasyon üstü) */
+.social-box{margin:14px 0 6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:14px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.social-box-title{font-weight:900;color:var(--text)}
+.social-box-links{display:flex;gap:12px;flex-wrap:wrap}
+.social-box-link{display:inline-flex;align-items:center;gap:10px;padding:10px 12px;border-radius:999px;text-decoration:none;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:var(--muted);font-weight:800;transition:transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease}
+.social-box-link:hover{transform:translateY(-1px);background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);color:var(--text)}
+.social-box-icon{
+  width:28px;
+  height:28px;
+  object-fit:contain;
+  flex-shrink:0;
+}
+.social-box-text{font-size:.92rem}
+
+/* Services social (Hizmetler üstü) */
+.services-social{grid-column:1 / -1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:16px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.services-social-title{font-weight:900;color:var(--text)}
+.services-social-links{display:flex;gap:12px;flex-wrap:wrap}
+.services-social-link{display:inline-flex;
+  align-items:center;justify-content:center;
+  padding:10px 14px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.06);
+  color:var(--muted);font-weight:800;
+  text-decoration:none;transition:transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease}
+.services-social-link:hover{transform:translateY(-1px);background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);color:var(--text)}
+
+
+
+
 @media (max-width:900px){
   .cards{grid-template-columns:1fr}
   .split{grid-template-columns:1fr}
@@ -324,7 +355,15 @@ section{scroll-margin-top:92px}
 .footer-links a:hover{color:var(--text);text-decoration:underline}
 .footer-copy{color:var(--muted-2)}
 
+.footer-social{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
+.social-link{display:inline-flex;align-items:center;gap:10px;padding:9px 12px;border-radius:999px;text-decoration:none;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:var(--muted);font-weight:800;transition:transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease}
+.social-link:hover{transform:translateY(-1px);background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);color:var(--text)}
+.social-icon{width:28px;height:28px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+.social-text{font-size:.92rem}
+
+
 /* Page overlay */
+
 .page-overlay{position:fixed;inset:0;z-index:90;background:linear-gradient(135deg,rgba(15,23,36,0.92) 0%, rgba(75,43,90,0.78) 45%, rgba(255,122,89,0.70) 100%);opacity:1;pointer-events:none}
 .page-overlay.fade-out{animation:overlayHide .9s cubic-bezier(.2,.9,.25,1) forwards}
 @keyframes overlayHide{to{opacity:0;transform:scale(1.02) translateY(-4%)}}
